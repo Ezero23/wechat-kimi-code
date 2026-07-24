@@ -24,33 +24,6 @@ Scan a QR code to bind your WeChat, and a new "friend" appears in your contacts.
 | **Two-way files** | Send images, Word docs, PDFs for Kimi to analyze. Generated files get pushed directly to WeChat — no need to go back to your computer. |
 | **Timeout reassurance** | Task taking a while? You'll get automatic progress messages letting you know it's still working. |
 
-## Smart Router
-
-Built-in zero-dependency, zero-training local routing engine (~5ms decision) that automatically picks the right model for each message — no manual switching needed:
-
-| Mode | Behavior | Best for |
-|------|----------|----------|
-| **Intelligence** | Always use the strongest model | Complex architecture, critical code review |
-| **Balance** (default) | Rule + semantic matching, upgrade on demand | Daily development, quality and cost balanced |
-| **Cost** | Strong model only on very strong signals (images/long context) | Budget-sensitive, high volume of simple queries |
-
-Three core mechanisms:
-
-- **Cache-Aware Routing** — On borderline signals, stays on the previous turn's model to maximize prompt cache hit rate
-- **Dynamic Upgrade** — Tracks conversation complexity trend; auto-upgrades to strong model when consecutive messages show increasing complexity above threshold
-- **Sticky + Auto-Downgrade** — Locks to strong model after upgrade; drops back to fast model after 3 consecutive casual messages
-
-Configuration (`~/.wechat-kimi-code/routing.json`):
-
-```json
-{
-  "mode": "balance",
-  "cacheAware": true,
-  "sticky": true,
-  "models": { "fast": "your-provider/fast", "strong": "your-provider/strong" }
-}
-```
-
 ---
 
 ## Install
