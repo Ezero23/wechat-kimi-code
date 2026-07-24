@@ -2,7 +2,7 @@ import { createInterface } from 'node:readline';
 import process from 'node:process';
 import { spawnSync } from 'node:child_process';
 import { join, basename } from 'node:path';
-import { unlinkSync, writeFileSync, mkdirSync } from 'node:fs';
+import { unlinkSync, writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 
 import { WeChatApi } from './wechat/api.js';
@@ -18,7 +18,7 @@ import { TurnRouter } from './claude/turn-router.js';
 import { loadConfig, saveConfig } from './config.js';
 import { logger } from './logger.js';
 import { DATA_DIR } from './constants.js';
-import { loadRoutingConfig, decideModel, writeDefaultRoutingConfig } from './router.js';
+import { DEFAULT_CONFIG, decideModel, type RoutingConfig } from 'ludex';
 import { MessageType, type WeixinMessage } from './wechat/types.js';
 import { loadPendingQueue, savePendingQueue, type PendingItem } from './pending-queue.js';
 
@@ -27,6 +27,28 @@ import { loadPendingQueue, savePendingQueue, type PendingItem } from './pending-
 // ---------------------------------------------------------------------------
 
 const MAX_MESSAGE_LENGTH = 4000;
+
+const ROUTING_CONFIG_PATH = join(DATA_DIR, 'routing.json');
+
+function loadRoutingConfig(): RoutingConfig {
+  if (existsSync(ROUTING_CONFIG_PATH)) {
+    try {
+      const parsed = JSON.parse(readFileSync(ROUTING_CONFIG_PATH, 'utf-8'));
+      return { ...structuredClone(DEFAULT_CONFIG), ...parsed,
+        models: { ...DEFAULT_CONFIG.models, ...parsed.models },
+        rules: parsed.rules ?? DEFAULT_CONFIG.rules,
+        semantic: parsed.semantic ?? DEFAULT_CONFIG.semantic,
+      };
+    } catch { /* fall through */ }
+  }
+  return structuredClone(DEFAULT_CONFIG);
+}
+
+function writeDefaultRoutingConfig(): void {
+  if (!existsSync(ROUTING_CONFIG_PATH)) {
+    writeFileSync(ROUTING_CONFIG_PATH, JSON.stringify(DEFAULT_CONFIG, null, 2), 'utf-8');
+  }
+}
 
 // Extensions eligible for auto-push when detected in Claude's response
 const AUTO_PUSH_EXTENSIONS = new Set([
