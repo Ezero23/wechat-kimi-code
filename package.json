@@ -1,7 +1,7 @@
 {
   "name": "wechat-kimi-code",
   "version": "1.0.0",
-  "description": "Chat with Claude Code from WeChat - a Claude Code Skill that bridges personal WeChat to local Claude Code",
+  "description": "Chat with Kimi Code from WeChat — a bridge that connects personal WeChat to local Kimi Code CLI",
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -26,16 +26,15 @@
   },
   "keywords": [
     "wechat",
-    "claude-code",
-    "claude",
+    "kimi",
+    "kimi-code",
     "bridge",
-    "chat",
-    "skill"
+    "chat"
   ],
-  "author": "Wechat-ggGitHub",
+  "author": "Ezero23",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wechat-ggGitHub/wechat-claude-code.git"
+    "url": "https://github.com/Ezero23/wechat-kimi-code.git"
   }
 }

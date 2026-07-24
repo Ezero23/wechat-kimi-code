@@ -796,9 +796,9 @@ async function sendToClaude(
       }
     } else if (result.error) {
       logger.error('Claude query error', { error: result.error });
-      await sender.sendText(fromUserId, contextToken, 'Claude 处理请求时出错，请稍后重试。');
+      await sender.sendText(fromUserId, contextToken, 'Kimi 处理请求时出错，请稍后重试。');
     } else if (!anySent) {
-      await sender.sendText(fromUserId, contextToken, 'Claude 无返回内容（可能因权限被拒而终止）');
+      await sender.sendText(fromUserId, contextToken, 'Kimi 无返回内容（可能因权限被拒而终止）');
     }
 
     // Update session with new SDK session ID

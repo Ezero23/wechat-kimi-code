@@ -3,6 +3,6 @@ dist/
 *.log
 .env
 .DS_Store
-.wechat-claude-code/
+.wechat-kimi-code/
 .claude/
 CLAUDE.md
