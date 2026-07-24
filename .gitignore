@@ -2,6 +2,7 @@ node_modules/
 dist/
 *.log
 .env
+.DS_Store
 .wechat-claude-code/
 .claude/
 CLAUDE.md
