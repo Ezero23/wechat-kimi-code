@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "source": "LMArena ELO + Swfte AI Leaderboard + public benchmarks",
+    "updated": "2026-07-24",
+    "note": "Static capability snapshot. Update when new models release."
+  },
+  "tiers": {
+    "frontier": { "label": "顶级", "minQuality": 96, "priceRange": "$$$" },
+    "strong":   { "label": "强力", "minQuality": 90, "priceRange": "$$" },
+    "balanced": { "label": "均衡", "minQuality": 85, "priceRange": "$" },
+    "fast":     { "label": "快速", "minQuality": 80, "priceRange": "¢" }
+  },
+  "categories": {
+    "coding": {
+      "description": "代码生成、调试、重构、agent 任务",
+      "signals": ["代码", "bug", "修复", "重构", "实现", "code", "fix", "debug", "refactor", "implement", "deploy", "SWE"],
+      "ranking": [
+        { "model": "claude-fable-5",       "quality": 100, "elo": 1525, "speed": 58,  "priceIn": 10,   "priceOut": 50,  "sweBench": 80.3, "humanEval": 98 },
+        { "model": "claude-opus-4.8",      "quality": 99,  "elo": 1512, "speed": 72,  "priceIn": 5,    "priceOut": 25,  "sweBench": 88.6, "humanEval": 96.2 },
+        { "model": "gpt-5.6",             "quality": 98,  "elo": 1514, "speed": 96,  "priceIn": 5,    "priceOut": 30,  "sweBench": 88.1, "humanEval": 96.4 },
+        { "model": "gpt-5.5-pro",         "quality": 98,  "elo": 1510, "speed": 68,  "priceIn": 30,   "priceOut": 180, "humanEval": 96.8 },
+        { "model": "kimi-k3",             "quality": 98,  "elo": 1500, "speed": 55,  "priceIn": 3,    "priceOut": 15,  "humanEval": 94, "frontendElo": 1679 },
+        { "model": "gemini-3.2-pro",      "quality": 97,  "elo": 1508, "speed": 128, "priceIn": 2,    "priceOut": 12,  "sweBench": 86.4, "humanEval": 94.1 },
+        { "model": "claude-opus-4.7",     "quality": 96,  "elo": 1505, "speed": 68,  "priceIn": 5,    "priceOut": 25,  "sweBench": 87.6, "humanEval": 95.4 },
+        { "model": "claude-sonnet-5",     "quality": 93,  "elo": 1479, "speed": 98,  "priceIn": 3,    "priceOut": 15,  "sweBench": 82.4, "humanEval": 93.3 },
+        { "model": "qwen3.7-max",         "quality": 94,  "elo": 1488, "speed": 90,  "priceIn": 2.5,  "priceOut": 7.5, "sweBench": 60.6, "humanEval": 92.4 },
+        { "model": "grok-4.3",            "quality": 93,  "elo": 1496, "speed": 83,  "priceIn": 1.25, "priceOut": 2.5, "humanEval": 91.2 },
+        { "model": "kimi-k2.6",           "quality": 92,  "elo": 1466, "speed": 48,  "priceIn": 0.73, "priceOut": 3.49, "sweBench": 80.2, "humanEval": 92 },
+        { "model": "deepseek-v4.5",       "quality": 92,  "elo": 1471, "speed": 62,  "priceIn": 0.5,  "priceOut": 1.1 },
+        { "model": "deepseek-v4-pro",     "quality": 90,  "elo": 1467, "speed": 33,  "priceIn": 1.74, "priceOut": 3.48 },
+        { "model": "gpt-4.1",             "quality": 89,  "elo": 1310, "speed": 120, "priceIn": 2,    "priceOut": 8 },
+        { "model": "gemini-2.5-pro",      "quality": 92,  "elo": 1345, "speed": 87,  "priceIn": 1.25, "priceOut": 10,  "humanEval": 91.4 }
+      ]
+    },
+    "math": {
+      "description": "数学推理、逻辑证明、量化分析",
+      "signals": ["数学", "证明", "计算", "方程", "math", "prove", "calculate", "equation", "theorem"],
+      "ranking": [
+        { "model": "o3",                  "quality": 96,  "elo": 1370, "speed": 68,  "priceIn": 10,   "priceOut": 40,  "math": 96.7, "mmlu": 92.3 },
+        { "model": "gpt-5.5-pro",         "quality": 98,  "elo": 1510, "speed": 68,  "priceIn": 30,   "priceOut": 180, "math": 95.4, "mmlu": 92.1 },
+        { "model": "claude-fable-5",      "quality": 100, "elo": 1525, "speed": 58,  "priceIn": 10,   "priceOut": 50,  "math": 95,   "mmlu": 92 },
+        { "model": "qwen3.7-max",         "quality": 94,  "elo": 1488, "speed": 90,  "priceIn": 2.5,  "priceOut": 7.5, "math": 94.6, "mmlu": 88.8 },
+        { "model": "gemini-3.2-pro",      "quality": 97,  "elo": 1508, "speed": 128, "priceIn": 2,    "priceOut": 12,  "math": 93.6, "mmlu": 91.4 },
+        { "model": "gemini-3.1-pro",      "quality": 96,  "elo": 1505, "speed": 131, "priceIn": 2,    "priceOut": 12,  "math": 92.4 },
+        { "model": "gpt-5.6",            "quality": 98,  "elo": 1514, "speed": 96,  "priceIn": 5,    "priceOut": 30,  "math": 92.3, "mmlu": 91.2 },
+        { "model": "kimi-k3",            "quality": 98,  "elo": 1500, "speed": 55,  "priceIn": 3,    "priceOut": 15,  "math": 92,   "mmlu": 89.5 },
+        { "model": "gpt-5.5",            "quality": 97,  "elo": 1506, "speed": 70,  "priceIn": 5,    "priceOut": 30,  "math": 91.2, "mmlu": 90.4 },
+        { "model": "claude-opus-4.8",     "quality": 99,  "elo": 1512, "speed": 72,  "priceIn": 5,    "priceOut": 25,  "math": 90.4, "mmlu": 90.6 },
+        { "model": "grok-4.3",           "quality": 93,  "elo": 1496, "speed": 83,  "priceIn": 1.25, "priceOut": 2.5, "math": 89.4, "mmlu": 88.6 },
+        { "model": "claude-opus-4.7",    "quality": 96,  "elo": 1505, "speed": 68,  "priceIn": 5,    "priceOut": 25,  "math": 88.7, "mmlu": 89.9 },
+        { "model": "claude-sonnet-5",    "quality": 93,  "elo": 1479, "speed": 98,  "priceIn": 3,    "priceOut": 15,  "math": 88.2, "mmlu": 89.1 },
+        { "model": "gemini-2.5-pro",     "quality": 92,  "elo": 1345, "speed": 87,  "priceIn": 1.25, "priceOut": 10,  "math": 86.3, "mmlu": 90.8 }
+      ]
+    },
+    "creative": {
+      "description": "创意写作、文案、故事、营销内容",
+      "signals": ["写文章", "文案", "故事", "创意", "write", "essay", "story", "creative", "copywriting", "blog"],
+      "ranking": [
+        { "model": "claude-fable-5",      "quality": 100, "elo": 1525, "speed": 58,  "priceIn": 10,   "priceOut": 50 },
+        { "model": "claude-opus-4.8",     "quality": 99,  "elo": 1512, "speed": 72,  "priceIn": 5,    "priceOut": 25 },
+        { "model": "gpt-5.5-pro",        "quality": 98,  "elo": 1510, "speed": 68,  "priceIn": 30,   "priceOut": 180 },
+        { "model": "gpt-5.6",            "quality": 98,  "elo": 1514, "speed": 96,  "priceIn": 5,    "priceOut": 30 },
+        { "model": "claude-opus-4.7",    "quality": 96,  "elo": 1505, "speed": 68,  "priceIn": 5,    "priceOut": 25 },
+        { "model": "gemini-3.2-pro",     "quality": 97,  "elo": 1508, "speed": 128, "priceIn": 2,    "priceOut": 12 },
+        { "model": "qwen3.7-max",        "quality": 94,  "elo": 1488, "speed": 90,  "priceIn": 2.5,  "priceOut": 7.5 },
+        { "model": "claude-sonnet-5",    "quality": 93,  "elo": 1479, "speed": 98,  "priceIn": 3,    "priceOut": 15 },
+        { "model": "grok-4.3",           "quality": 93,  "elo": 1496, "speed": 83,  "priceIn": 1.25, "priceOut": 2.5 }
+      ]
+    },
+    "instruction": {
+      "description": "指令遵循、格式化输出、结构化任务",
+      "signals": ["格式", "JSON", "表格", "列表", "format", "structured", "template", "output"],
+      "ranking": [
+        { "model": "gpt-5.6",            "quality": 98,  "elo": 1514, "speed": 96,  "priceIn": 5,    "priceOut": 30 },
+        { "model": "claude-opus-4.8",     "quality": 99,  "elo": 1512, "speed": 72,  "priceIn": 5,    "priceOut": 25 },
+        { "model": "gemini-3.2-pro",      "quality": 97,  "elo": 1508, "speed": 128, "priceIn": 2,    "priceOut": 12 },
+        { "model": "gpt-5.5",            "quality": 97,  "elo": 1506, "speed": 70,  "priceIn": 5,    "priceOut": 30 },
+        { "model": "claude-sonnet-5",    "quality": 93,  "elo": 1479, "speed": 98,  "priceIn": 3,    "priceOut": 15 },
+        { "model": "gpt-4.1",            "quality": 89,  "elo": 1310, "speed": 120, "priceIn": 2,    "priceOut": 8 },
+        { "model": "qwen3.7-max",        "quality": 94,  "elo": 1488, "speed": 90,  "priceIn": 2.5,  "priceOut": 7.5 }
+      ]
+    },
+    "general": {
+      "description": "通用对话、问答、翻译、总结",
+      "signals": [],
+      "ranking": [
+        { "model": "claude-fable-5",      "quality": 100, "elo": 1525, "speed": 58,  "priceIn": 10,   "priceOut": 50 },
+        { "model": "claude-opus-4.8",     "quality": 99,  "elo": 1512, "speed": 72,  "priceIn": 5,    "priceOut": 25 },
+        { "model": "gpt-5.6",            "quality": 98,  "elo": 1514, "speed": 96,  "priceIn": 5,    "priceOut": 30 },
+        { "model": "kimi-k3",            "quality": 98,  "elo": 1500, "speed": 55,  "priceIn": 3,    "priceOut": 15 },
+        { "model": "gemini-3.2-pro",      "quality": 97,  "elo": 1508, "speed": 128, "priceIn": 2,    "priceOut": 12 },
+        { "model": "gpt-5.5",            "quality": 97,  "elo": 1506, "speed": 70,  "priceIn": 5,    "priceOut": 30 },
+        { "model": "qwen3.7-max",        "quality": 94,  "elo": 1488, "speed": 90,  "priceIn": 2.5,  "priceOut": 7.5 },
+        { "model": "grok-4.3",           "quality": 93,  "elo": 1496, "speed": 83,  "priceIn": 1.25, "priceOut": 2.5 },
+        { "model": "claude-sonnet-5",    "quality": 93,  "elo": 1479, "speed": 98,  "priceIn": 3,    "priceOut": 15 },
+        { "model": "kimi-k2.6",          "quality": 92,  "elo": 1466, "speed": 48,  "priceIn": 0.73, "priceOut": 3.49 },
+        { "model": "deepseek-v4.5",      "quality": 92,  "elo": 1471, "speed": 62,  "priceIn": 0.5,  "priceOut": 1.1 },
+        { "model": "meta-llama-5",       "quality": 91,  "elo": 1466, "speed": 76,  "priceIn": 0.8,  "priceOut": 2.4 },
+        { "model": "gpt-4.1",            "quality": 89,  "elo": 1310, "speed": 120, "priceIn": 2,    "priceOut": 8 },
+        { "model": "gemini-2.5-pro",     "quality": 92,  "elo": 1345, "speed": 87,  "priceIn": 1.25, "priceOut": 10 },
+        { "model": "deepseek-v3.2",      "quality": 87,  "elo": 1455, "speed": 62,  "priceIn": 0.25, "priceOut": 0.38 },
+        { "model": "gpt-5-mini",         "quality": 83,  "elo": null, "speed": null, "priceIn": 0.25, "priceOut": 2 },
+        { "model": "o3-mini",            "quality": 88,  "elo": 1305, "speed": 155, "priceIn": 1.1,  "priceOut": 4.4 }
+      ]
+    }
+  },
+  "valuePicks": {
+    "_note": "高质量/低成本比 — 适合 cost 模式的默认选择",
+    "coding": "grok-4.3",
+    "math": "qwen3.7-max",
+    "creative": "grok-4.3",
+    "instruction": "gpt-4.1",
+    "general": "deepseek-v4.5"
+  },
+  "costTiers": {
+    "_note": "按 output price ($/1M tokens) 分档",
+    "premium":  { "maxOut": 50,  "models": ["claude-fable-5", "gpt-5.5-pro", "o1-pro"] },
+    "standard": { "maxOut": 30,  "models": ["claude-opus-4.8", "gpt-5.6", "gpt-5.5", "claude-opus-4.7", "o3"] },
+    "economy":  { "maxOut": 15,  "models": ["gemini-3.2-pro", "claude-sonnet-5", "kimi-k3", "qwen3.7-max", "gpt-4.1"] },
+    "budget":   { "maxOut": 5,   "models": ["grok-4.3", "kimi-k2.6", "deepseek-v4.5", "deepseek-v4-pro", "meta-llama-5"] },
+    "ultra":    { "maxOut": 1.5, "models": ["deepseek-v3.2", "gpt-5-mini", "o3-mini"] }
+  }
+}
